@@ -1,0 +1,1518 @@
+{
+	"info": {
+		"_postman_id": "5bc04013-b1a9-4cdb-942e-1c82e61a167d",
+		"name": "serveur-cours-2026",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12794046"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "ajouter un utilisateur",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "Powell",
+									"type": "text"
+								},
+								{
+									"key": "prenom",
+									"value": "Kerry",
+									"type": "text"
+								},
+								{
+									"key": "mot_de_passe",
+									"value": "John",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/diarr/OneDrive/Pictures/VOID CHECK.jpg"
+								},
+								{
+									"key": "email",
+									"value": "powell3@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "naissance",
+									"value": "2010-10-10",
+									"type": "text"
+								},
+								{
+									"key": "biographie",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "conduite",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "DepartmentId",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/users",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mise a jour d'un utilisateur",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "nom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "prenom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "mot_de_passe",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "naissance",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "biographie",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "conduite",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "DepartmentId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/users/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste des utilisateurs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/users",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "suppression d'un utilisateur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/users/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profil d'un utilisateur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/users/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "department d\"un utilisateur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/users/:id/department",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"department"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajout de roles",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-url}}/users/:id/roles",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"roles"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajout de matieres",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-url}}/users/:id/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"subjects"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "9"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour photo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/C:/Users/diarr/OneDrive/Documents/Cours/Lacite_react/react-hiver-2025/images/keita.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/users/:id/photo",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"photo"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matieres de l'utilisateur",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/users/:id/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"users",
+								":id",
+								"subjects"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "matieres",
+			"item": [
+				{
+					"name": "ajouter une matiere",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "chimie",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "chm201",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "statut",
+									"value": "optionnel",
+									"type": "text"
+								},
+								{
+									"key": "DepartmentId",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "LaboratoryId",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour d'une matiere",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "Math",
+									"type": "text"
+								},
+								{
+									"key": "code",
+									"value": "math201",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "John",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "statut",
+									"value": "optionnel",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "liste des matieres",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "suppression d'une matiere",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Detail d'une matiere",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "department d\"une matiere",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id/department",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id",
+								"department"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ajout de utilisateurs",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ids\":[1,2]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id/users",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour photo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id/image",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Utilisateurs de la matiere",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/subjects/:id/users",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"subjects",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "departments",
+			"item": [
+				{
+					"name": "Liste des departments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/departments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creation d'un department",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nom\":\"Reseau et telecom\",\r\n    \"description\":\"Excellent departement selon les commentaires!!!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-url}}/departments",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour departement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": []
+						},
+						"url": {
+							"raw": "{{domain-url}}/departments/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour image departement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "Informatique",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/departments/:id/image",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Utilisateurs du departement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/departments/:id/users",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id",
+								"users"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matieres du departement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/departments/:id/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id",
+								"subjects"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details du departement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/departments/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suppression d'un departement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/departments/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"departments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "laboratories",
+			"item": [
+				{
+					"name": "Liste des labs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/laboratories",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creation d'un lab",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "salle",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "information",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/laboratories",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour d'un lab",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "biologie",
+									"type": "text"
+								},
+								{
+									"key": "salle",
+									"value": "y24",
+									"type": "text"
+								},
+								{
+									"key": "information",
+									"value": "A ameliorer",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour image d'un lab",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "bio",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id/image",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Equipements du lab",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id/equipment",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id",
+								"equipment"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Matieres du lab",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id/subjects",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id",
+								"subjects"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suppression d'un lab",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details du lab",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/laboratories/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"laboratories",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "equipements",
+			"item": [
+				{
+					"name": "Liste des equipements",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/equipment",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Creation d'un equipement",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modele",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/equipment",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour d'un equipement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "modele",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/equipment/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mise a jour image d'un equipement",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "nom",
+									"value": "bio",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{domain-url}}/equipment/:id/image",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment",
+								":id",
+								"image"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suppression d'un equipement",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/equipment/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details de l'equipement",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{domain-url}}/equipment/:id",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"equipment",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "roles",
+			"item": [
+				{
+					"name": "Creation de role",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titre\":\"etudiant\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Liste des roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/roles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Suppression de role",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5000/api/roles/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"roles",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "role-users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentification",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"powell@gmail.com\",\r\n    \"mot_de_passe\":\"John\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{domain-url}}/login",
+							"host": [
+								"{{domain-url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain-url",
+			"value": "http://localhost:5000/api",
+			"type": "string"
+		},
+		{
+			"key": "token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTAsImlhdCI6MTczMTQ0ODEyOX0.Q8YqggWS8zvtSXiQgtDRlmaE0LHTSDbtL3qQQ6uruOg",
+			"type": "string"
+		}
+	]
+}
